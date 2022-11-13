@@ -25,30 +25,20 @@ const Container = styled.div`
 `
 
 const ProfilePic = styled.img`
-  position: absolute;
+  position: flex;
   bottom: 0;
   right: 0;
-  transition: all 0.5s;
-  opacity: 0;
-  width: 100%;
-  height: 90%;
-
-  ${Breakpoints.minMedia.tablet} {
-    width: 60%;
-    left: 50%;
-  }
-
-  ${Breakpoints.minMedia.largeDesktop} {
-    height: 90vh;
-    width: auto;
-  }
+  transition: all 1.5s;
+  width: auto;
+  height: 70%;
 
   &.show {
-    opacity: 1;
+    opacity: 50%;
   }
 
   &.hide {
-    transform: rotateZ(10deg) translateX(20vh);
+    transform: rotateZ(180deg) translateX(100vh);
+    opacity: 0;
   }
 
   @keyframes profile {
@@ -76,7 +66,7 @@ const CTATextContent = styled.div`
     top: 30vh;
   }
 
-  animation: loading-cta 0.2s ${introTime + 0.5}s linear forwards;
+  animation: loading-cta 0.5s ${introTime + 0.5}s linear forwards;
 
   @keyframes loading-cta {
     to {
@@ -160,9 +150,8 @@ const CTA = () => {
       <Spacer size={Spacings.xxl} />
 
       <ProfilePic
-        src='/assets/profile-sm.png'
-        srcSet='/assets/istockphoto-855086378.jpg 1280w,
-        /assets/istockphoto-855086378.jpg 1600w'
+        src='/assets/rear-view-programmer-working-all-night-long.jpg'
+        srcSet='/assets/rear-view-programmer-working-all-night-long.jpg'
         className={inView ? (!init ? 'animate' : 'show') : init ? 'hide' : ''}
       />
     </Container>

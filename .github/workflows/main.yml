@@ -2,7 +2,7 @@
 #
 # To get started with Next.js see: https://nextjs.org/docs/getting-started
 #
-name: Deploy Next.js site to Pages
+name: Deploy Next.js site to App Engine
 
 on:
   # Runs on pushes targeting the default branch
@@ -64,7 +64,6 @@ jobs:
       - id: 'auth'
         uses: 'google-github-actions/auth@v0'
         with:
-          workload_identity_provider: 'projects/123456789/locations/global/workloadIdentityPools/my-pool/providers/my-provider'
           service_account: 'my-service-account@my-project.iam.gserviceaccount.com'
 
       - id: 'deploy'

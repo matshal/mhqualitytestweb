@@ -1,8 +1,8 @@
 export const facts = {
     name: 'MH Quality Test AB',
-    address: 'Mesanvägen 47',
-    postalCode: '42338',
+    address: 'Address: Mesanvägen 47',
+    postalCode: 'PostalCode: 423 38',
     postalAddress: 'Torslanda',
-    orgNumber: '',
+    orgNumber: 'Organisation Number: 559307-4502',
     email: 'mhqualitytest@gmail.com'
   }

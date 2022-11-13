@@ -16,7 +16,7 @@ const Container = styled.div`
   width: 100%;
   position: fixed;
   z-index: 5;
-  background: linear-gradient(#00000040, transparent);
+  background: linear-gradient(#00000080, transparent);
 `
 
 const Logo = styled.img`
