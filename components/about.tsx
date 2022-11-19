@@ -25,7 +25,7 @@ const About = () => {
       </StyledParagraph>
       <StyledParagraph>
         <b>Test </b>
-        is the activity that gathers information about the product and development process to validate how the expectations are met.
+        is the activity to gather information about the product and development process to validate how the expectations are met.
       </StyledParagraph>
       <StyledParagraph>
 
