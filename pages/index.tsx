@@ -6,6 +6,7 @@ import { Colors } from '../styles/colors'
 import { Spacings } from '../styles/spacings'
 import Contact from '../components/contact'
 import Facts from '../components/facts'
+import About from '../components/about'
 
 const Container = styled.div`
   min-height: 100vh;
@@ -20,6 +21,7 @@ const Home: NextPage = () => {
     <Container id='up-top'>
       <CTA />
       <Spacer size={Spacings.xxl} />
+      <About />
       <Facts />
       <Contact />
     </Container>

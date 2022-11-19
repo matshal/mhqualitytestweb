@@ -25,12 +25,12 @@ const Container = styled.div`
 `
 
 const ProfilePic = styled.img`
-  position: flex;
+  #position: fixed;
   bottom: 0;
   right: 0;
   transition: all 1.5s;
   width: auto;
-  height: 70%;
+  height: auto;
 
   &.show {
     opacity: 50%;

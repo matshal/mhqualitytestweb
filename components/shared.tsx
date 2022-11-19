@@ -32,8 +32,12 @@ export const Center = styled.div`
 
 export const StyledParagraph = styled(Paragraph)`
   margin-bottom: ${Spacings.md};
-  max-width: 500px;
+  max-width: 900px;
   color: white;
+  font-size: 24px;
+  ${Breakpoints.minMedia.tablet} {
+    font-size: 32px;
+  }
 `
 
 export const StyledLink = styled.a<{
