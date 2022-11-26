@@ -7,6 +7,7 @@ import { Spacings } from '../styles/spacings'
 import Contact from '../components/contact'
 import Facts from '../components/facts'
 import About from '../components/about'
+import TechInfo from '../components/techinfo'
 
 const Container = styled.div`
   min-height: 100vh;
@@ -24,6 +25,7 @@ const Home: NextPage = () => {
       <About />
       <Facts />
       <Contact />
+      <TechInfo />
     </Container>
   )
 }
