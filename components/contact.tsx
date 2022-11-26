@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Spacings } from '../styles/spacings'
-import { Spacer, StyledTitle } from './shared'
+import { Spacer, StyledParagraph, StyledTitle } from './shared'
 import { Container } from './shared'
 import { company } from '../utils/company'
 import { IconMail } from '@tabler/icons'
@@ -13,9 +13,18 @@ const Contact = () => {
       <StyledTitle id='contact' level={1}>
        Contact information
       </StyledTitle>
-      <a href={company.email}>
-        <IconMail></IconMail>
-        <h1>{company.email}</h1>
+      <StyledParagraph>
+        {company.name}<br></br>
+        {company.address}<br></br>
+        {company.postalCode} {company.postalAddress}<br></br>
+        {company.orgNumber}<br></br>
+        Yes, we do have a VAT number.  
+        </StyledParagraph>
+      <a href={company.refEmail}>
+        <IconMail /> 
+        <StyledParagraph>
+          {company.email}
+        </StyledParagraph>
       </a>
     </Container>
   )

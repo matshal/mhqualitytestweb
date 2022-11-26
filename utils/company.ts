@@ -4,6 +4,7 @@ export const company = {
     postalCode: 'PostalCode: 423 38',
     postalAddress: 'Torslanda',
     orgNumber: 'Organisation Number: 559307-4502',
-    email: 'mailto:mhqualitytest@gmail.com',
+    email: 'mhqualitytest@gmail.com',
+    refEmail: 'mailto:mhqualitytest@gmail.com',
     linkedInUrl: 'https://www.linkedin.com/company/mh-quality-test-ab'
   }

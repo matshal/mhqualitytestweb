@@ -21,15 +21,7 @@ const Facts = () => {
           Test planning and team coaching 
         </li>
       </ul>
-
       </StyledParagraph>
-      <StyledParagraph>
-        {company.name}<br></br>
-        {company.address}<br></br>
-        {company.postalCode} {company.postalAddress}<br></br>
-        {company.orgNumber}<br></br>
-        Yes, we do have a VAT number.  
-        </StyledParagraph>
     </Container>
   )
 }
