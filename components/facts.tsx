@@ -1,5 +1,5 @@
 import { Container, StyledParagraph, StyledTitle } from './shared'
-import { facts } from '../utils/company'
+import { company } from '../utils/company'
 import { List, ListContext } from 'rc-field-form'
 import ListBody from 'antd/lib/transfer/ListBody'
 
@@ -26,10 +26,10 @@ const Facts = () => {
 
       </StyledParagraph>
       <StyledParagraph>
-        {facts.name}<br></br>
-        {facts.address}<br></br>
-        {facts.postalCode} {facts.postalAddress}<br></br>
-        {facts.orgNumber}<br></br>
+        {company.name}<br></br>
+        {company.address}<br></br>
+        {company.postalCode} {company.postalAddress}<br></br>
+        {company.orgNumber}<br></br>
         Yes, we do have a VAT number.  
         </StyledParagraph>
     </Container>

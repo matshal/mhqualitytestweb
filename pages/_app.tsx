@@ -18,7 +18,7 @@ function MyApp ({ Component, pageProps }: AppProps) {
       <link rel="shortcut icon" href="logo.png" />
         <link
           rel='preconnect'
-          href='http://qualitytest.se/'
+          href='http://www.qualitytest.se/'
           crossOrigin='anonymous'
         />
         <style

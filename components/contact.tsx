@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Spacings } from '../styles/spacings'
 import { Spacer, StyledTitle } from './shared'
 import { Container } from './shared'
-import { facts } from '../utils/company'
+import { company } from '../utils/company'
 import { IconMail } from '@tabler/icons'
 
 const Contact = () => {
@@ -13,9 +13,9 @@ const Contact = () => {
       <StyledTitle id='contact' level={1}>
        Contact information
       </StyledTitle>
-      <a href={facts.email}>
+      <a href={company.email}>
         <IconMail></IconMail>
-        <h1>{facts.email}</h1>
+        <h1>{company.email}</h1>
       </a>
     </Container>
   )

@@ -4,10 +4,11 @@ import { Spacings } from '../../styles/spacings'
 import Link from 'next/link'
 import { Spacer, StyledLink } from '../shared'
 import React from 'react'
-import { IconBrandGithub, IconBrandLinkedin } from '@tabler/icons'
+import { IconBrandGithub, IconBrandLinkedin, IconMail } from '@tabler/icons'
 import { socialMedia } from '../../utils/social-media'
 import { introTime } from '../cta'
 import SideMenu from './side-menu'
+import { company } from '../../utils/company'
 
 const Container = styled.div`
   height: 80px;
@@ -91,25 +92,20 @@ export const Header = () => {
             <Logo src='assets/1616056020857.jpeg' />
           </a>
         </Link>
-        <CenterContainer>
-          {pages.map(({ name, url }) => (
-            <React.Fragment key={'route-' + name}>
-              <Link href={url} passHref>
-                <StyledLink skipUnderline>{name}</StyledLink>
-              </Link>
-              <Spacer direction='horizontal' />
-            </React.Fragment>
-          ))}
-        </CenterContainer>
         <SocialMedia>
           <a
             href={socialMedia.linkedin.link}
-            target='https://www.linkedin.com/company/mh-quality-test-ab'
+            target={company.linkedInUrl}
             rel='noopener noreferrer'
           >
             <IconBrandLinkedin size='48px' />
           </a>
         </SocialMedia>
+        <Link href='#contact' passHref>
+          <a>
+            <IconMail/>
+          </a>
+        </Link>
         <SideMenu />
       </Content>
     </Container>
