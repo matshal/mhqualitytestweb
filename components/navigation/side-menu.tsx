@@ -139,8 +139,8 @@ const SideMenu = () => {
 
   const routes = [
     { name: 'Up Top', route: '#up-top' },
-    { name: 'Company facts', route: '#facts'},
     { name: 'Quality and Test', route: '#about'},
+    { name: 'Company facts', route: '#facts'},
     { name: 'Contact', route: '#contact' }
   ]
 

@@ -10,7 +10,7 @@ const Facts = () => {
     <Container id='facts'>
       <StyledTitle level={1}>Company facts</StyledTitle>
       <StyledParagraph>
-        MH Quality Test was founded 2021 my Mats Hallingström, who has more than 20 year of experience of 
+        MH Quality Test was founded 2021 by Mats Hallingström, who has more than 20 year of experience of 
         product development, testing and test coaching. We offer services within: 
       <ul>
         <li>
