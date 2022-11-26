@@ -1,7 +1,5 @@
 import { Container, StyledParagraph, StyledTitle } from './shared'
 import { company } from '../utils/company'
-import { List, ListContext } from 'rc-field-form'
-import ListBody from 'antd/lib/transfer/ListBody'
 
 type Tech = 'react' | 'nextjs' | 'sqlite'
 

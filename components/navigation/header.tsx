@@ -2,11 +2,9 @@ import styled from 'styled-components'
 import { Breakpoints } from '../../styles/breakpoints'
 import { Spacings } from '../../styles/spacings'
 import Link from 'next/link'
-import { Spacer, StyledLink } from '../shared'
 import React from 'react'
-import { IconBrandGithub, IconBrandLinkedin, IconMail } from '@tabler/icons'
+import { IconBrandLinkedin, IconMail } from '@tabler/icons'
 import { socialMedia } from '../../utils/social-media'
-import { introTime } from '../cta'
 import SideMenu from './side-menu'
 import { company } from '../../utils/company'
 
@@ -44,27 +42,6 @@ const Content = styled.div`
   ${Breakpoints.minMedia.desktop} {
     max-width: ${Breakpoints.size.desktop};
     padding: 0 ${Spacings.lg};
-  }
-`
-
-const CenterContainer = styled.div`
-  display: none;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  opacity: 0;
-  transform: translateY(-20px);
-  ${Breakpoints.minMedia.tablet} {
-    display: flex;
-  }
-
-  animation: loading-content 0.2s ${introTime + 1}s linear forwards;
-
-  @keyframes loading-content {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
   }
 `
 

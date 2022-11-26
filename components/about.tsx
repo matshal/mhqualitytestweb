@@ -1,5 +1,3 @@
-import { IconBold } from '@tabler/icons'
-import { Content } from 'antd/lib/layout/layout'
 import styled from 'styled-components'
 import { Breakpoints } from '../styles/breakpoints'
 import { Container, StyledParagraph, StyledTitle } from './shared'
