@@ -4,6 +4,8 @@ import { Spacer, StyledParagraph, StyledTitle } from './shared'
 import { Container } from './shared'
 import { company } from '../utils/company'
 import { IconMail } from '@tabler/icons'
+import Link from 'next/link'
+import styled from 'styled-components'
 
 const Contact = () => {
 
@@ -26,6 +28,7 @@ const Contact = () => {
           {company.email}
         </StyledParagraph>
       </a>
+      <img src="https://github.com/matshal/mhqualitytestweb/actions/workflows/main.yml/badge.svg" />
     </Container>
   )
 }
