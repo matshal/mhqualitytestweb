@@ -16,6 +16,11 @@ const Facts = () => {
         </li>
         <li>
           Automated test development
+          <ul>
+            <li>Python, C# dotnet, NodeJS, etc</li>
+            <li>bitbucket, Azure DevOps, github, etc</li>
+            <li>HIL frameworks, I/O systems</li>
+          </ul>
         </li>
         <li>
           Test planning and team coaching 
