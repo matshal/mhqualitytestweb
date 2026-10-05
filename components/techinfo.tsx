@@ -1,23 +1,36 @@
-import React, { useState } from 'react'
-import { Spacings } from '../styles/spacings'
-import { Spacer, StyledParagraph, StyledTitle } from './shared'
-import { Container } from './shared'
-import { company } from '../utils/company'
-import { IconMail } from '@tabler/icons'
 import styled from 'styled-components'
 
-const Badge = styled.img`
-  margin-left: ${Spacings.sm};
-  width: 400px;
+const Footer = styled.footer`
+  padding: 24px;
+  color: var(--paper);
+  background: var(--ink);
 `
 
-const TechInfo = () => {
+const Inner = styled.div`
+  width: min(1120px, 100%);
+  min-height: 34px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+`
 
-  return (
-    <Container>
-      <Badge src="https://github.com/matshal/mhqualitytestweb/actions/workflows/main.yml/badge.svg" />
-    </Container>
-  )
-}
+const Badge = styled.img`
+  width: 190px;
+  height: auto;
+`
+
+const TechInfo = () => (
+  <Footer>
+    <Inner>
+      <a href='https://github.com/matshal/mhqualitytestweb/actions/workflows/main.yml'>
+        <Badge
+          src='https://github.com/matshal/mhqualitytestweb/actions/workflows/main.yml/badge.svg'
+          alt='GitHub Actions workflow status'
+        />
+      </a>
+    </Inner>
+  </Footer>
+)
 
 export default TechInfo

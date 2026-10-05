@@ -6,60 +6,59 @@ import { Colors } from '../../styles/colors'
 import { Spacings } from '../../styles/spacings'
 
 const MobileExpandButton = styled.button`
-  width: 50px;
-  height: 50px;
-  border-radius: 50px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
   background: transparent;
-  border: 0;
+  border: 1px solid #f1f6f766;
   z-index: 100;
-  display: block;
+  display: none;
   position: relative;
-  margin-right: ${Spacings.lg};
+  cursor: pointer;
 
-  ${Breakpoints.minMedia.tablet} {
-    display: none;
+  @media (max-width: 767px) {
+    display: block;
   }
 
   &.expanded {
     &:after {
-      transform: rotateZ(-45deg);
-      background-color: ${Colors.secondary};
+      transform: rotate(45deg);
+      background-color: var(--lime);
     }
     &:before {
-      transform: translate(7px, -10px) rotateZ(45deg) scaleX(2);
-      background-color: ${Colors.secondary};
+      transform: rotate(-45deg);
+      background-color: var(--lime);
     }
   }
 
   &:after {
     content: '';
-    width: 20px;
-    height: 4px;
-    background: white;
+    width: 18px;
+    height: 2px;
+    background: var(--paper);
     position: absolute;
-    top: 17px;
-    left: 14px;
-    transform-origin: right top;
-    transition: transform 0.15s;
+    top: 15px;
+    left: 11px;
+    transform-origin: center;
+    transition: transform 180ms ease, background 180ms ease;
   }
 
   &:before {
     content: '';
-    width: 10px;
-    height: 4px;
-    background: white;
+    width: 18px;
+    height: 2px;
+    background: var(--paper);
     position: absolute;
-    top: 27px;
-    left: 16px;
-    transform-origin: left top;
-    transition: transform 0.15s;
+    top: 23px;
+    left: 11px;
+    transform-origin: center;
+    transition: transform 180ms ease, background 180ms ease;
   }
 `
 
 const Sider = styled.div<{ show: boolean }>`
-  display: flex;
+  display: none;
   align-items: center;
-  width: auto;
   position: fixed;
   z-index: 99;
   left: 0;
@@ -67,34 +66,15 @@ const Sider = styled.div<{ show: boolean }>`
   right: 0;
   bottom: 0;
   justify-content: center;
-  transition: all 0.25s;
-  ${({ show }) =>
-    show ? 'transform: translateY(0);' : 'transform: translateY(100vh);'}
-  border-top: 2px solid white;
-  flex-shrink: 0;
+  padding-top: 76px;
+  background: var(--ink);
+  transition: opacity 200ms ease, transform 300ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  transform: ${({ show }) => (show ? 'translateY(0)' : 'translateY(-8px)')};
+  opacity: ${({ show }) => (show ? 1 : 0)};
+  pointer-events: ${({ show }) => (show ? 'auto' : 'none')};
 
-  ${Breakpoints.minMedia.tablet} {
-    border-top: 0;
-    justify-content: flex-start;
-    align-items: flex-start;
-    margin-top: 100px;
-    position: relative;
-    width: 300px;
-    max-height: 800px;
-    transform: translateY(0) !important;
-    background-color: transparent;
-    display: none;
-  }
-
-  &:before {
-    content: '';
-    z-index: -1;
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #fff;
+  @media (max-width: 767px) {
+    display: flex;
   }
 `
 
@@ -103,57 +83,57 @@ const Menu = styled.ul`
   display: flex;
   justify-content: center;
   flex-direction: column;
-  align-items: center;
-  width: 200px;
+  align-items: flex-start;
+  width: min(520px, calc(100% - 48px));
   padding: 0;
-  ${Breakpoints.minMedia.tablet} {
-    align-items: flex-start;
-    width: 200px;
-    padding-inline-start: 40px;
-  }
 `
 
 const MenuItem = styled.li`
-  margin-bottom: ${Spacings.md};
-  padding-top: ${Spacings.lg};
-  ${Breakpoints.minMedia.tablet} {
-    padding-top: 0;
-    margin-bottom: ${Spacings.xl};
-  }
+  width: 100%;
+  padding: 18px 0;
+  border-bottom: 1px solid #f1f6f733;
+
   &:last-of-type {
-    margin-bottom: 0;
+    border-bottom: 0;
   }
 `
 
 const StyledLink = styled.a<{ active?: boolean }>`
   text-decoration: none;
   font-weight: 600;
-  font-size: 28px;
+  font-size: 30px;
   font-family: 'Londrina Solid';
   cursor: pointer;
-  color: ${Colors.secondary};
+  color: var(--paper);
+
+  &:hover {
+    color: var(--lime);
+  }
 `
 
 const SideMenu = () => {
   const [showMenu, setShowMenu] = useState(false)
 
   const routes = [
-    { name: 'Up Top', route: '#up-top' },
-    { name: 'Quality and Test', route: '#about'},
-    { name: 'Company facts', route: '#facts'},
+    { name: 'Home', route: '#up-top' },
+    { name: 'Approach', route: '#about' },
+    { name: 'Services', route: '#facts' },
     { name: 'Contact', route: '#contact' }
   ]
 
   return (
     <>
       <MobileExpandButton
+        type='button'
         className={showMenu ? 'expanded' : ''}
+        aria-label={showMenu ? 'Close navigation' : 'Open navigation'}
+        aria-expanded={showMenu}
         onClick={() => setShowMenu(!showMenu)}
       />
-      <Sider show={showMenu}>
+      <Sider show={showMenu} role='navigation' aria-label='Mobile navigation'>
         <Menu>
-          {routes.map(({ name, route }, index) => (
-            <MenuItem key={index}>
+          {routes.map(({ name, route }) => (
+            <MenuItem key={route}>
               <Link href={route} passHref>
                 <StyledLink onClick={() => setShowMenu(false)}>{name}</StyledLink>
               </Link>
